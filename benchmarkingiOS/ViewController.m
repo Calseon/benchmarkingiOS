@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured:)];
     [self.scrollviewViewContainer addGestureRecognizer:singleTap];
+    self.scrollviewViewContainer.contentSize =CGSizeMake(320, 700);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,7 +29,7 @@
 
 // Start button handler
 - (IBAction)startTest:(id)sender {
-    [self resetTest];
+    //[self resetTest];
     [self startTest];
 }
 
@@ -50,6 +51,16 @@
 // Start the test
 -(void) startTest{
     NSInteger numberOfViews = [self.textfieldNumViews.text intValue];
+    UILabel *initial = [[UILabel alloc] initWithFrame: CGRectMake(0, 0, 300, 12)];
+    initial.text = [NSString stringWithFormat:@"%d",numberOfViews];
+    initial.backgroundColor = [UIColor redColor];
+    [self.scrollviewViewContainer addSubview:initial];
+    for (int i = 0; i < 0 ; i++){
+        UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(0, 0, 300, 12)];
+        label.text = [NSString stringWithFormat:@"%d",i];
+        label.backgroundColor = [UIColor redColor];
+        [self.scrollviewViewContainer addSubview:label];
+    }
     self.textfieldNumViews.resignFirstResponder;
 }
 
