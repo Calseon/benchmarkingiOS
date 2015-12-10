@@ -19,7 +19,9 @@
     // Do any additional setup after loading the view, typically from a nib.
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured:)];
     [self.scrollviewViewContainer addGestureRecognizer:singleTap];
-    self.scrollviewViewContainer.contentSize =CGSizeMake(320, 700);
+    
+    UIView *contentView;
+    self.scrollviewViewContainer.contentSize =contentView.frame.size;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,13 +31,14 @@
 
 // Start button handler
 - (IBAction)startTest:(id)sender {
-    //[self resetTest];
-    [self startTest];
+    self.textfieldNumViews.resignFirstResponder;
+    //[self resetTesting];
+    [self startTesting];
 }
 
 // Reset button handler
 - (IBAction)resetTest:(id)sender {
-    [self resetTest];
+    [self resetTesting];
 }
 
 // Dismiss keyboard when empty space on the screen is touched
@@ -49,23 +52,32 @@
 }
 
 // Start the test
--(void) startTest{
+-(void) startTesting{
     NSInteger numberOfViews = [self.textfieldNumViews.text intValue];
-    UILabel *initial = [[UILabel alloc] initWithFrame: CGRectMake(0, 0, 300, 12)];
-    initial.text = [NSString stringWithFormat:@"%d",numberOfViews];
-    initial.backgroundColor = [UIColor redColor];
-    [self.scrollviewViewContainer addSubview:initial];
-    for (int i = 0; i < 0 ; i++){
-        UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(0, 0, 300, 12)];
+    NSDate *methodStart = [NSDate date];
+    for (int i = 0; i < numberOfViews ; i++){
+        // Create a label with height 12, width same as scrollview container
+        UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(0, 12*2*i, self.scrollviewViewContainer.bounds.size.width, 14)];
         label.text = [NSString stringWithFormat:@"%d",i];
-        label.backgroundColor = [UIColor redColor];
+        label.backgroundColor = [UIColor lightGrayColor];
         [self.scrollviewViewContainer addSubview:label];
     }
-    self.textfieldNumViews.resignFirstResponder;
+    NSDate *methodFinish = [NSDate date];
+    // timeIntervalSinceDate returns value in seconds, we want milliseconds so multiply 1000.
+    NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart] * 1000;
+    NSString *intervalString = [@"Time: " stringByAppendingString:[[NSString stringWithFormat:@"%f", executionTime] stringByAppendingString: @" ms"]];
+    self.labelTime.text=intervalString;
+    // Resize the ScrollView to fit contents
+    CGRect contentRect = CGRectZero;
+    for (UIView *view in self.scrollviewViewContainer.subviews) {
+        contentRect = CGRectUnion(contentRect, view.frame);
+    }
+    contentRect.size.width = 200;
+    self.scrollviewViewContainer.contentSize = contentRect.size;
 }
 
 // Reset test and remove all child views from scrollview-container
--(void) resetTest{
+-(void) resetTesting{
     [[self.scrollviewViewContainer subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     self.textfieldNumViews.text = @"";
 }

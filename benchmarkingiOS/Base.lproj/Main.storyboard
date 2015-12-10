@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1AC-r3-61H">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1AC-r3-61H">
                                 <rect key="frame" x="183" y="97" width="235" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="g7e-zR-9Vh"/>
@@ -37,7 +37,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVZ-Fd-e7b">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVZ-Fd-e7b">
                                 <rect key="frame" x="271" y="135" width="59" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="Ws8-xY-0NA"/>
@@ -61,7 +61,7 @@
                                     <action selector="startTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G2X-rn-iFf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMw-pw-p1t">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMw-pw-p1t">
                                 <rect key="frame" x="265" y="163" width="71" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="MEZ-To-EG3"/>
@@ -85,7 +85,7 @@
                                     <action selector="resetTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gGc-E3-wqB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x57-uF-3fc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x57-uF-3fc">
                                 <rect key="frame" x="187" y="43" width="226" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="CdO-ZP-YCx"/>
@@ -93,7 +93,7 @@
                                     <constraint firstAttribute="height" constant="46" id="vTg-Lp-Qhy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -111,11 +111,11 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Cbx-M4-Ni9">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Cbx-M4-Ni9">
                                 <rect key="frame" x="100" y="201" width="401" height="370"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="303" id="BsQ-lu-aqc">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="330"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="100"/>
                                     </constraint>
                                     <constraint firstAttribute="height" constant="472" id="ECA-uA-xB2"/>
                                 </constraints>
@@ -146,12 +146,12 @@
                             <constraint firstItem="x57-uF-3fc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="QFN-Eq-gCP"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="x57-uF-3fc" secondAttribute="trailing" constant="60" id="TzX-vv-iAP"/>
                             <constraint firstItem="IVZ-Fd-e7b" firstAttribute="top" secondItem="1AC-r3-61H" secondAttribute="bottom" constant="8" id="XMg-Cz-lva"/>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Cbx-M4-Ni9" secondAttribute="trailing" constant="28" id="foE-fD-b6L">
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="Cbx-M4-Ni9" secondAttribute="trailing" constant="28" id="foE-fD-b6L">
                                 <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="1AC-r3-61H" secondAttribute="trailing" constant="30" id="j1d-QT-uCw"/>
                             <constraint firstItem="1AC-r3-61H" firstAttribute="top" secondItem="x57-uF-3fc" secondAttribute="bottom" constant="13" id="krN-wg-4M8"/>
-                            <constraint firstItem="Cbx-M4-Ni9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="29" id="tcO-dW-zQb">
+                            <constraint firstItem="Cbx-M4-Ni9" firstAttribute="leading" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="29" id="tcO-dW-zQb">
                                 <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="xMw-pw-p1t" secondAttribute="trailing" constant="90" id="vVv-Jz-l7s"/>
@@ -167,11 +167,11 @@
                                 <exclude reference="j1d-QT-uCw"/>
                                 <exclude reference="krN-wg-4M8"/>
                                 <exclude reference="wls-Xh-EOB"/>
-                                <exclude reference="7Bg-K4-2Wu"/>
-                                <exclude reference="XMg-Cz-lva"/>
                                 <exclude reference="6cQ-AC-TXH"/>
                                 <exclude reference="foE-fD-b6L"/>
                                 <exclude reference="tcO-dW-zQb"/>
+                                <exclude reference="7Bg-K4-2Wu"/>
+                                <exclude reference="XMg-Cz-lva"/>
                                 <exclude reference="EtM-sd-vbI"/>
                                 <exclude reference="vVv-Jz-l7s"/>
                                 <exclude reference="wDI-ur-sQK"/>
@@ -186,11 +186,11 @@
                                 <include reference="j1d-QT-uCw"/>
                                 <include reference="krN-wg-4M8"/>
                                 <include reference="wls-Xh-EOB"/>
-                                <include reference="7Bg-K4-2Wu"/>
-                                <include reference="XMg-Cz-lva"/>
                                 <include reference="6cQ-AC-TXH"/>
                                 <include reference="foE-fD-b6L"/>
                                 <include reference="tcO-dW-zQb"/>
+                                <include reference="7Bg-K4-2Wu"/>
+                                <include reference="XMg-Cz-lva"/>
                                 <include reference="EtM-sd-vbI"/>
                                 <include reference="vVv-Jz-l7s"/>
                                 <include reference="wDI-ur-sQK"/>
